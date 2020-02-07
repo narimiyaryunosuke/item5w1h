@@ -1,0 +1,24 @@
+<% if items %>
+<div class="inner">
+    
+  <div class="items">
+    
+    <% items.each do |item| %>
+    <div class="item">
+      <div class="item-top">
+        <div class="item-img">   
+          <img src="<%= item.image_url %>">
+        </div>
+      </div>
+      <div class="item-btn">
+        <% if item %>
+        <p class="item-name"><%= item.name %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    
+  </div>
+  
+</div>  
+<% end %>
