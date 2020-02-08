@@ -21,8 +21,9 @@ class ItemsController < ApplicationController
   def read(result)
     code = result['itemCode']
     name = result['itemName']
+    price = result['itemPrice']
     url = result['itemUrl']
     image_url = result['mediumImageUrls'].first.gsub('?_ex=128x128', '')
-    {code: code, name: name, url: url, image_url: image_url}
+    {code: code, name: name, price: price, url: url, image_url: image_url}
   end
 end
