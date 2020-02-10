@@ -10,20 +10,9 @@ class ItemsController < ApplicationController
       results = RakutenWebService::Ichiba::Item.search({keyword: @keyword, imageFlag: 1, hits: 20})
      
       results.each do |result|
-        item = Item.new(read(result))
+        item = Item.find_or_initialize_by(read(result))
         @items << item
       end
     end
-  end
-  
-  private
-  
-  def read(result)
-    code = result['itemCode']
-    name = result['itemName']
-    price = result['itemPrice']
-    url = result['itemUrl']
-    image_url = result['mediumImageUrls'].first.gsub('?_ex=128x128', '')
-    {code: code, name: name, price: price, url: url, image_url: image_url}
   end
 end

@@ -14,6 +14,9 @@
         <% if item %>
         <p class="item-name"><%= item.name %></p>
         <p class="item-price"><%= item.price %>円</p>
+        <% if user_signed_in? %>
+        <%= render 'favorites/fav_button', item: item %>
+        <% end %>
         <% end %>
       </div>
     </div>

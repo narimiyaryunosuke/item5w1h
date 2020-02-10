@@ -5,5 +5,8 @@ class Item < ApplicationRecord
   validates :url, presence: true
   validates :image_url, presence: true
   
+  has_many :favorites, dependent: :destroy
   
+  
+
 end
