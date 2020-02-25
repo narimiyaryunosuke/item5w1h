@@ -1,8 +1,47 @@
 <header id="header">
+
   <div class="inner">
-    <ul>
-      <li>ログイン</li>
-      <li>新規登録</li>
-    </ul>
-  </div>
+
+    <div class="header-logo">
+      <%= link_to "5w1h", root_url ,class: "header-ttl txtl" %>
+      <p class="header-sub txts">あなたに合った商品を</p>
+    </div>
+    
+    
+     <div class="drawer">
+        <div class="drawer-icon">
+          <span class="drawer-open"><span class="drawer-icon-parts"></span></span>
+          <span class="drawer-close"><span class="drawer-icon-parts"></span></span>
+        </div>
+        
+        <nav class="drawer-nav">
+          <ul class="drawer-list">
+            <% if user_signed_in? %>
+            <li class="menu-item txts"><%= link_to "5w1hを見る", details_path %></li>
+            <li class="menu-item txts"><%= link_to "アイテムを見る", new_item_path %></li>
+            <li class="menu-item txts"><%= link_to 'マイページ/お気に入り商品一覧', user_path(current_user) %></li>
+            <li class="menu-item txts"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="menu-item txtm"><%= link_to "ログイン",new_user_session_path, class: "post" %></li>
+            <li class="menu-item txtm"><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+
+       <nav class="global-nav">
+          <ul class="global-list">
+            <% if user_signed_in? %>
+            <li class="menu-item txts"><%= link_to "5w1hを見る", details_path %></li>
+            <li class="menu-item txts"><%= link_to "アイテムを見る", new_item_path %></li>
+            <li class="menu-item txts"><%= link_to 'マイページ/お気に入り商品一覧' , user_path(current_user) %></li>
+            <li class="menu-item txts"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="menu-item txtm"><%= link_to "ログイン",new_user_session_path, class: "post" %></li>
+            <li class="menu-item txtm"><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+            <% end %>
+          </ul>
+       </nav>
+    
+    </div>
 </header>

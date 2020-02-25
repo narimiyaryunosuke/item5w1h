@@ -1,0 +1,29 @@
+<div class="fav">
+  <div class="inner">
+    <div class="fav-item">
+      
+      <div class="detail-item-contents what-item-contents">
+        <%= link_to @item.name, @item.url %>
+      </div>
+      
+      <div class ="fav-item-img item-img">
+        <img src="<%= @item.image_url %>">
+      </div>
+      
+      <div class="detail">
+        <div class="inner">
+          <div class="form-btn">
+            <% unless @detail %>
+            <%= link_to "5w1h新規作成", new_detail_path(@favorite), class: "btn-5w1h"  %>
+            <% else %>
+            <%= render 'details/detail', detail: @detail %> 
+            
+            <%= link_to "5w1h編集", edit_detail_path(@detail),  class: "btn-5w1h" %>
+            <%= link_to "5w1h削除", detail_path(@detail),  method: :delete,  class: "btn-5w1h" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

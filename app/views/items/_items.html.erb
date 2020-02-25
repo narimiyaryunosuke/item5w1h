@@ -16,6 +16,12 @@
         <p class="item-price"><%= item.price %>円</p>
         <% if user_signed_in? %>
         <%= render 'favorites/fav_button', item: item %>
+
+        
+        <% if current_user.fav?(item) %>
+        <%= link_to "商品詳細", item_path(item), class: "detail-btn" %>
+        <% end %>
+        
         <% end %>
         <% end %>
       </div>

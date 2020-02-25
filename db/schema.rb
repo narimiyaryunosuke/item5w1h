@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200208091513) do
+ActiveRecord::Schema.define(version: 20200210121542) do
+
+  create_table "details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "favorite_id",   null: false
+    t.string   "name"
+    t.string   "purchase_date"
+    t.string   "place"
+    t.string   "person"
+    t.string   "reason"
+    t.string   "way"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["favorite_id"], name: "index_details_on_favorite_id", using: :btree
+  end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -49,6 +62,7 @@ ActiveRecord::Schema.define(version: 20200208091513) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "details", "favorites"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
 end

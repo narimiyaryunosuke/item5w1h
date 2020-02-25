@@ -3,7 +3,6 @@
     <%= hidden_field_tag :item_id, item.id %>
     <%= submit_tag '登録解除', class: 'btn' %>
   <% end %>
-  
 <% else %>
   <%= form_tag(favorites_path) do %>
   <%= hidden_field_tag :item_code, item.code %>
