@@ -50,10 +50,10 @@ class DetailsController < ApplicationController
     
     
     if @detail.update(detail_params)
-      flash[:success] = "4wの編集が完了しました。"
+      flash[:success] = "5w1hの編集が完了しました。"
       redirect_to item_path(@item)
     else
-      flash.now[:danger] = "4wの編集に失敗しました。"
+      flash.now[:danger] = "5w1hの編集に失敗しました。"
       render 'edit'
     end
   end
@@ -62,7 +62,7 @@ class DetailsController < ApplicationController
     @detail = Detail.find(params[:id])
     
     @detail.destroy
-    flash[:success] =  '4wを削除しました。'
+    flash[:success] =  '5w1hを削除しました。'
     redirect_back(fallback_location: item_path(@detail))
   end
   
