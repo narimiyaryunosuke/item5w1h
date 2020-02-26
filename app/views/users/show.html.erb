@@ -1,4 +1,11 @@
 <div class="user">
   <p class="user-name txtl"><%= @user.name %></p>
+  <div class="user-img">
+  <% if @user.image? %>
+    <%= image_tag @user.image.url(:thumb) %>
+  <% else %>
+    <%= image_tag "", :size => '200x200' %>
+  <% end %>
+  </div>
   <%= render 'items/items', items: @items %>
 </div>

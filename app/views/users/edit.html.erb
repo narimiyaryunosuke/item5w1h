@@ -1,0 +1,25 @@
+<div class="edit-user main-form">
+  <div class="inner">
+    <h1 class="form-sub-ttl">編集</h1>
+    
+    <%= form_for(@user) do |f| %>
+      <div class="img">
+       <% if @user.image? %>
+          <%= image_tag @user.image.url(:thumb) %>
+       <% else %>
+          <%= image_tag "no_image.jpg", :size => '100x100' %>
+       <% end %>
+          <button type="button" class="img-btn btn btn-outline-secondary rounded-pill">
+             <%= f.file_field :image %>
+          </button>
+      </div>
+    
+    <div class="form-item">
+      <%= f.text_field :name, :placeholder => "name" %>
+    </div>
+    <div class="form-btn">
+      <%= f.submit '変更', class: "btn-5w" %>
+    </div>
+  </div>
+</div>
+    <% end %>
