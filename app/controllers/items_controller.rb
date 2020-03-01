@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   
   def new
     @items = []
-    
     @keyword = params[:keyword]
     
     if @keyword
@@ -13,7 +12,9 @@ class ItemsController < ApplicationController
         @item = Item.find_or_initialize_by(read(result))
         @items << @item
       end
+      
     end
+    
   end
   
   def show

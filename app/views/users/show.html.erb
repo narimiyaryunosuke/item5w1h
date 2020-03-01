@@ -1,14 +1,17 @@
 <div class="user">
-  <p class="user-name txtl"><%= @user.name %></p>
-  <div class="user-img">
-  <% if @user.image? %>
-    <%= image_tag @user.image.url(:thumb) %>
-  <% else %>
-    <%= image_tag "", :size => '200x200' %>
-  <% end %>
+  <div class="inner">
+    <h1 class="ttl">マイページ/お気に入り商品一覧</h1>
+    <p class="user-name txtl">
+      <%= @user.name %>
+    </p>
+    <div class="user-img">
+      <% if @user.image? %>
+      <%= image_tag @user.image.url(:thumb) %>
+      <% else %>
+      <%= image_tag "no_image", :size => '200x200' %>
+      <% end %>
+    </div>
+    <%= link_to "ユーザー編集", edit_user_path(current_user), class: "btn" %>
+    <%= render 'items/items', items: @items %>
   </div>
-  
-  <p class="edit-btn txtm"><%= link_to "ユーザー編集", edit_user_path(current_user) %></p>
-
-  <%= render 'items/items', items: @items %>
 </div>

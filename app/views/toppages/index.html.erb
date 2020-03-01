@@ -1,14 +1,27 @@
-<% if user_signed_in? %>
-  <h2>現在<%= current_user.name %>さんがログインしています</h2>
-  <h2>　メールアドレス:<%= current_user.email %></h2>  
-  
-  <h1>トップページ</h1>
-  
-  <%= render 'items/items', items: @items %>
-  
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <h2>現在ログインしておりません</h2>
-  <%= link_to "ログイン",new_user_session_path, class: "post" %>
-  <%= link_to "新規登録", new_user_registration_path, class: "post" %> 
-<% end %>
+<div class="top">
+  <div class="inner">
+    <% if user_signed_in? %>
+    <h1 class="ttl">トップページ</h1>
+    <p class="login-name">現在
+      <%= current_user.name %>さんがログインしています
+    </p>
+    <p class="email-address">メールアドレス:
+      <%= current_user.email %>
+    </p>
+    <%= render 'items/items', items: @items %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btnl" %>
+    <% else %>
+    <h1 class="ttll">Item5w1hへ
+      <br>ようこそ
+    </h1>
+    <p class="desc-5w1h txtm">Itme5w1hとは?
+      <br>あなたはつい衝動買いしてしまうことはありませんか？
+      <br>Item5wではお気に入りの商品に詳細をつけることができます。
+      <br>What(何を)、When(いつ)、Where(どこで)、Who（誰が）、Why（なぜ）、How（どのように）
+      <br>の5つのWと1つのHの詳細をつけて、本当に欲しい商品を見つけよう！ 
+    </p>
+    <%= link_to "ログイン",new_user_session_path, class: "btnl" %>
+    <%= link_to "新規登録", new_user_registration_path, class: "btnl" %>
+    <% end %>
+  </div>
+</div>

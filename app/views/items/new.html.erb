@@ -1,15 +1,12 @@
-<div class='search'>
-  
+<div class='item-search'>
   <div class="inner">
-    
-    <div class="search-box">
+    <h1 class="ttl">アイテムを探す</h1>
+    <div class="form-item">
       <%= form_tag(new_item_path, method: :get) do %>
-        <%= text_field_tag :keyword, @keyword, placeholder: "キーワードを打ち込んでください" %>
-        <%= submit_tag '商品を検索' %>
-      <% end %>
+      <%= text_field_tag :keyword, @keyword, placeholder: "キーワードを打ち込んでください" %>
     </div>
-    <div class="search-results">
-      <%= render 'items', items: @items %>
-    </div>
+    <%= submit_tag '商品を検索', class: "btnl" %>
+    <% end %>
+    <%= render 'items', items: @items %>
   </div>
 </div>

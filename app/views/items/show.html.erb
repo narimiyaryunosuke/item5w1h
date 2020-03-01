@@ -1,29 +1,22 @@
 <div class="fav">
   <div class="inner">
+    <h1 class="ttl">お気に入りアイテム</h1>
     <div class="fav-item">
-      
-      <div class="detail-item-contents what-item-contents">
+      <p class="fav-item-name">
         <%= link_to @item.name, @item.url %>
-      </div>
-      
-      <div class ="fav-item-img item-img">
+      </p>
+      <div class="fav-item-img">
         <img src="<%= @item.image_url %>">
       </div>
-      
-      <div class="detail">
-        <div class="inner">
-          <div class="form-btn">
-            <% unless @detail %>
-            <%= link_to "5w1h新規作成", new_detail_path(@favorite), class: "btn-5w1h"  %>
-            <% else %>
-            <%= render 'details/detail', detail: @detail %> 
-            
-            <%= link_to "5w1h編集", edit_detail_path(@detail),  class: "btn-5w1h" %>
-            <%= link_to "5w1h削除", detail_path(@detail),  method: :delete,  class: "btn-5w1h" %>
-            <% end %>
-          </div>
-        </div>
+      <% unless @detail %>
+      <%= link_to "5w1h新規作成", new_detail_path(@favorite), class: "btn"  %>
+      <% else %>
+      <%= render 'details/detail', detail: @detail %>
+      <div class="btns">
+        <%= link_to "5w1h編集", edit_detail_path(@detail),  class: "btn" %>
+        <%= link_to "5w1h削除", detail_path(@detail),  method: :delete,  class: "btn" %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

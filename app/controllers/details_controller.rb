@@ -1,8 +1,8 @@
 class DetailsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_detail, only: [:edit, :update, :destroy]
   
   def index
-    
     @details = []
     @favorites = Favorite.where(user_id: current_user.id)
     
@@ -12,7 +12,8 @@ class DetailsController < ApplicationController
         @details << @detail
       end
     end
-
+    
+    @exist_details = @details.compact
   end
   
   def new
@@ -40,14 +41,11 @@ class DetailsController < ApplicationController
   end
   
   def edit
-    @detail = Detail.find(params[:id])
   end
   
   def update
-    @detail = Detail.find(params[:id])
     @favorite = Favorite.find_by(id: @detail.favorite_id)
     @item = Item.find_by(id: @favorite.item_id)
-    
     
     if @detail.update(detail_params)
       flash[:success] = "5w1hの編集が完了しました。"
@@ -56,11 +54,10 @@ class DetailsController < ApplicationController
       flash.now[:danger] = "5w1hの編集に失敗しました。"
       render 'edit'
     end
+    
   end
   
   def destroy
-    @detail = Detail.find(params[:id])
-    
     @detail.destroy
     flash[:success] =  '5w1hを削除しました。'
     redirect_back(fallback_location: item_path(@detail))
@@ -68,7 +65,12 @@ class DetailsController < ApplicationController
   
   private
   
+  def set_detail
+    @detail = Detail.find(params[:id])
+  end
+  
   def detail_params
     params.require(:detail).permit(:favorite_id, :name, :purchase_date, :place, :person, :reason,  :way)
   end
+  
 end

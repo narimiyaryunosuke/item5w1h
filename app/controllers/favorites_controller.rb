@@ -4,7 +4,6 @@ class FavoritesController < ApplicationController
     
     unless @item.persisted?
       results = RakutenWebService::Ichiba::Item.search(itemCode: @item.code)
-
       @item = Item.new(read(results.first))
       @item.save
     end
