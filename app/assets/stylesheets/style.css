@@ -221,6 +221,10 @@ a {
   text-decoration: unset;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 li {
   list-style: none;
 }
@@ -254,6 +258,10 @@ input[type="submit"] {
 .header-logo {
   display: inline-block;
   margin: 5px;
+}
+
+.header-logo .txtl {
+  color: #000;
 }
 
 .drawer {
@@ -385,6 +393,10 @@ input[type="submit"] {
   display: block;
   padding: 0 14px;
   color: #000;
+}
+
+.global-list .menu-item a:hover {
+  color: #696969;
 }
 
 @media (max-width: 680px) {
@@ -740,11 +752,6 @@ input[type="submit"] {
 ---------------------------- */
 /* bootstrap
 ---------------------------- */
-a:hover {
-  color: unset;
-  text-decoration: none;
-}
-
 .input-group {
   display: block;
 }
@@ -761,6 +768,19 @@ a:hover {
   border-bottom-right-radius: 4px;
 }
 
+.input-group-append:hover,
+.bootstrap-datetimepicker-widget:hover {
+  cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: 300px !important;
+}
+
+.dropdown-menu {
+  font-size: 2rem;
+}
+
 /* /bootstrap
 ---------------------------- */
 /* pagination
@@ -772,7 +792,7 @@ a:hover {
 
 .pagination > li > a {
   border: none;
-  color: #000;
+  color: #696969;
 }
 
 .pagination > .active > a {
