@@ -104,32 +104,32 @@ input, select {
 ===================================== */
 @media (max-width: 480px) {
   .txts {
-    font-weight: 400 !important;
-    font-size: 12px !important;
+    font-weight: 400;
+    font-size: 12px;
   }
   .txtm {
-    font-weight: 400 !important;
-    font-size: 14px !important;
+    font-weight: 400;
+    font-size: 14px;
   }
   .txtl {
-    font-weight: 700 !important;
-    font-size: 24px !important;
+    font-weight: 700;
+    font-size: 24px;
   }
 }
 
 .txts {
-  font-weight: 400 !important;
-  font-size: 16px !important;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .txtm {
-  font-weight: 400 !important;
-  font-size: 18px !important;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .txtl {
-  font-weight: 700 !important;
-  font-size: 30px !important;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 .ttl {
@@ -402,32 +402,6 @@ input[type="submit"] {
   min-height: 100vh;
 }
 
-/* top
----------------------------- */
-.login-name,
-.email-address {
-  margin: 5px 0;
-}
-
-.desc-5w1h {
-  margin-bottom: 100px;
-  line-height: 2;
-}
-
-/* /top
----------------------------- */
-/* user
----------------------------- */
-.user-name {
-  margin: 10px 0;
-}
-
-.user-img {
-  margin: 50px 0;
-}
-
-/* /user
----------------------------- */
 /* cmn-form
 ---------------------------- */
 .cmn-form form {
@@ -479,6 +453,45 @@ input[type="submit"] {
 }
 
 /* /cmn-form
+---------------------------- */
+/* user-form
+---------------------------- */
+.user-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  width: 100%;
+}
+
+/* /user-form
+---------------------------- */
+/* top
+---------------------------- */
+.login-name,
+.email-address {
+  margin: 5px 0;
+}
+
+.desc-5w1h {
+  margin-bottom: 100px;
+  line-height: 2;
+}
+
+/* /top
+---------------------------- */
+/* user
+---------------------------- */
+.user-name {
+  margin: 10px 0;
+}
+
+.user-img {
+  margin: 50px 0;
+}
+
+/* /user
 ---------------------------- */
 /* items
 ---------------------------- */
@@ -612,19 +625,6 @@ input[type="submit"] {
 
 /* /detail
 ---------------------------- */
-/* user-form
----------------------------- */
-.user-form {
-  width: 80%;
-  margin: 0 auto;
-}
-
-@media (max-width: 680px) {
-  width: 100%;
-}
-
-/* /user-form
----------------------------- */
 /* /main
 ---------------------------- */
 /* footer
@@ -741,24 +741,24 @@ input[type="submit"] {
 /* bootstrap
 ---------------------------- */
 a:hover {
-  color: unset !important;
-  text-decoration: none !important;
+  color: unset;
+  text-decoration: none;
 }
 
 .input-group {
-  display: block !important;
+  display: block;
 }
 
 .form-control {
-  height: 100% !important;
+  height: 100%;
 }
 
 .input-group > .form-control:not(:first-child),
 .input-group > .custom-select:not(:last-child) {
-  border-top-left-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 /* /bootstrap
@@ -768,7 +768,15 @@ a:hover {
 .pagination {
   justify-content: center;
   margin: 10px auto;
-  font-size: 1.5rem;
+}
+
+.pagination > li > a {
+  border: none;
+  color: #000;
+}
+
+.pagination > .active > a {
+  background: #93c9ff;
 }
 
 /* /pagination

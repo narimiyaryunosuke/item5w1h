@@ -16,13 +16,13 @@
       <ul class="drawer-list">
         <% if user_signed_in? %>
         <li class="menu-item txts">
-          <%= link_to "5w1hを見る", details_path %>
-        </li>
-        <li class="menu-item txts">
           <%= link_to "アイテムを探す", new_item_path %>
         </li>
         <li class="menu-item txts">
           <%= link_to 'マイページ/お気に入り商品一覧', user_path(current_user) %>
+        </li>
+        <li class="menu-item txts">
+          <%= link_to "5w1hを見る", details_path %>
         </li>
         <li class="menu-item txts">
           <%= link_to 'パスワード変更', edit_user_registration_path(current_user) %>
@@ -45,16 +45,16 @@
     <ul class="global-list">
       <% if user_signed_in? %>
       <li class="menu-item txts">
-        <%= link_to "5w1hを見る", details_path %>
-      </li>
-      <li class="menu-item txts">
         <%= link_to "アイテムを探す", new_item_path %>
       </li>
       <li class="menu-item txts">
-        <%= link_to 'マイページ/お気に入り商品一覧' , user_path(current_user) %>
+        <%= link_to "5w1hを見る", details_path %>
       </li>
       <li class="menu-item txts">
         <%= link_to 'パスワード変更', edit_user_registration_path(current_user) %>
+      </li>
+      <li class="menu-item txts">
+        <%= link_to 'マイページ/お気に入り商品一覧' , user_path(current_user) %>
       </li>
       <li class="menu-item txts">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

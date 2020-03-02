@@ -9,6 +9,7 @@
       <%= current_user.email %>
     </p>
     <%= render 'items/items', items: @items %>
+    <%= paginate @items %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btnl" %>
     <% else %>
     <h1 class="ttll">Item5w1hへ
