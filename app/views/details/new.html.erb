@@ -5,11 +5,11 @@
     <%= hidden_field_tag :favorite_id, @favorite.id  %>
     <div class="form-item">
       <%= f.label :name, 'What', class: "txtm" %>
-      <%= f.text_field :name, value: @item.name,  :placeholder => "name" %>
+      <%= f.text_field :name, value: @item.name,  :placeholder => "何を買いたいですか？" %>
     </div>
     <div class="form-item input-group" data-target-input="nearest">
       <%= f.label :purchase_date, 'When', class: "txtm" %>
-      <%= f.text_field :purchase_date, id: "purchase_date", class: "form-control datepicker", data: { target: '#purchase_date'} ,:placeholder => "purchase_date" %>
+      <%= f.text_field :purchase_date, id: "purchase_date", class: "form-control datepicker", data: { target: '#purchase_date'} ,:placeholder => "いつ買いたいですか？" %>
       <div class="input-group-append" data-target="#purchase_date" data-toggle="datetimepicker">
         <div class="input-group-text">
           <i class="fa fa-calendar">カレンダー</i>
@@ -18,19 +18,19 @@
     </div>
     <div class="form-item">
       <%= f.label :place, 'Where', class: "txtm" %>
-      <%= f.text_field :place, :placeholder => "place" %>
+      <%= f.text_field :place, :placeholder => "どこで買いたいですか？" %>
     </div>
     <div class="form-item">
       <%= f.label :person, 'Who', class: "txtm" %>
-      <%= f.text_field :person, :placeholder => "person" %>
+      <%= f.text_field :person, :placeholder => "誰に買いますか？" %>
     </div>
     <div class="form-item">
       <%= f.label :reason, 'Why', class: "txtm" %>
-      <%= f.text_area :reason, :placeholder => "reason" %>
+      <%= f.text_area :reason, :placeholder => "なぜ買いたいですか？" %>
     </div>
     <div class="form-item">
       <%= f.label :way, 'How', class: "txtm" %>
-      <%= f.text_area :way, :placeholder => "way" %>
+      <%= f.text_area :way, :placeholder => "どのようにして買いたいですか？" %>
     </div>
     <%= f.submit '完了',class: "btnl" %>
     <% end %>
